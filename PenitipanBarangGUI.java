@@ -1,4 +1,3 @@
-// 5. PenitipanBarangGUI.java - Main GUI Class (Diperbaiki)
 package penitipan_barang;
 
 import javax.swing.*;
@@ -32,12 +31,12 @@ public class PenitipanBarangGUI extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
         
-        // Header dengan background solid
+        // Header
         JPanel headerPanel = new JPanel();
         headerPanel.setBackground(new Color(70, 130, 180));
         headerPanel.setPreferredSize(new Dimension(0, 80));
         headerPanel.setLayout(new BorderLayout());
-        headerPanel.setOpaque(true); // Pastikan background tidak transparan
+        headerPanel.setOpaque(true);
         
         // Title Label
         JLabel titleLabel = new JLabel("SISTEM PENITIPAN BARANG");
@@ -66,7 +65,7 @@ public class PenitipanBarangGUI extends JFrame {
         headerPanel.add(titlePanel, BorderLayout.CENTER);
         add(headerPanel, BorderLayout.NORTH);
         
-        // Main Content dengan Tabs
+        // Main Content
         tabbedPane = new JTabbedPane();
         tabbedPane.setFont(new Font("Arial", Font.BOLD, 12));
         
@@ -116,12 +115,12 @@ public class PenitipanBarangGUI extends JFrame {
             BorderFactory.createEmptyBorder(15, 15, 15, 15)
         ));
         
-        // Input fields dengan styling yang lebih baik
+        // Input fields
         panel.add(createFieldPanel("👤 Nama Pemilik *", txtNamaPemilik = new JTextField()));
         panel.add(createFieldPanel("📞 Nomor Telepon", txtNomorTelepon = new JTextField()));
         panel.add(createFieldPanel("📦 Jenis Barang *", txtJenisBarang = new JTextField()));
         
-        // Deskripsi dengan styling
+        // Deskripsi
         JLabel lblDeskripsi = new JLabel("📝 Deskripsi Barang");
         lblDeskripsi.setFont(new Font("Arial", Font.BOLD, 12));
         panel.add(lblDeskripsi);
@@ -144,15 +143,15 @@ public class PenitipanBarangGUI extends JFrame {
         
         panel.add(Box.createVerticalStrut(15));
         
-        // Buttons dengan styling yang lebih menarik
+        // Buttons 
         JPanel buttonPanel = new JPanel(new GridLayout(2, 1, 8, 8));
         
         JButton btnSimpan = new JButton("💾 SIMPAN BARANG");
         btnSimpan.setFont(new Font("Arial", Font.BOLD, 12));
         btnSimpan.setBackground(new Color(46, 204, 113));
         btnSimpan.setForeground(Color.WHITE);
-        btnSimpan.setContentAreaFilled(true); // FIXED
-        btnSimpan.setOpaque(true);            // FIXED
+        btnSimpan.setContentAreaFilled(true); 
+        btnSimpan.setOpaque(true);            
         btnSimpan.setFocusPainted(false);
         btnSimpan.setBorder(BorderFactory.createEmptyBorder(10, 15, 10, 15));
         btnSimpan.addActionListener(e -> simpanBarang());
@@ -161,8 +160,8 @@ public class PenitipanBarangGUI extends JFrame {
         btnClear.setFont(new Font("Arial", Font.BOLD, 12));
         btnClear.setBackground(new Color(149, 165, 166));
         btnClear.setForeground(Color.WHITE);
-        btnClear.setContentAreaFilled(true); // FIXED
-        btnClear.setOpaque(true);            // FIXED
+        btnClear.setContentAreaFilled(true); 
+        btnClear.setOpaque(true);           
         btnClear.setFocusPainted(false);
         btnClear.setBorder(BorderFactory.createEmptyBorder(10, 15, 10, 15));
 
@@ -207,7 +206,7 @@ public class PenitipanBarangGUI extends JFrame {
         JPanel panel = new JPanel(new BorderLayout(10, 10));
         panel.setBackground(new Color(245, 245, 245));
         
-        // Table Panel dengan styling yang lebih baik
+        // Panel
         JPanel tablePanel = new JPanel(new BorderLayout());
         tablePanel.setBackground(Color.WHITE);
         tablePanel.setBorder(BorderFactory.createCompoundBorder(
@@ -237,7 +236,7 @@ public class PenitipanBarangGUI extends JFrame {
         tableBarang.getTableHeader().setForeground(Color.WHITE);
         tableBarang.setSelectionBackground(new Color(184, 207, 229));
         
-        // Custom renderer untuk status
+        // Custom renderer status
         tableBarang.getColumnModel().getColumn(7).setCellRenderer(new DefaultTableCellRenderer() {
             @Override
             public Component getTableCellRendererComponent(JTable table, Object value, 
@@ -263,7 +262,7 @@ public class PenitipanBarangGUI extends JFrame {
         tablePanel.add(scrollPane, BorderLayout.CENTER);
         panel.add(tablePanel, BorderLayout.CENTER);
         
-        // Action Buttons Panel dengan styling yang lebih baik
+        // Action Buttons Panel
         JPanel actionPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 15, 10));
         actionPanel.setBackground(new Color(245, 245, 245));
         
@@ -310,7 +309,7 @@ public class PenitipanBarangGUI extends JFrame {
         panel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
         panel.setBackground(new Color(245, 245, 245));
         
-        // Header dengan tombol export
+        // Header2
         JPanel headerPanel = new JPanel(new BorderLayout());
         headerPanel.setBackground(Color.WHITE);
         headerPanel.setBorder(BorderFactory.createCompoundBorder(
@@ -335,7 +334,7 @@ public class PenitipanBarangGUI extends JFrame {
         headerPanel.add(btnExportPDF, BorderLayout.EAST);
         panel.add(headerPanel, BorderLayout.NORTH);
         
-        // Table Histori dengan styling
+        // Histori
         JPanel tablePanel = new JPanel(new BorderLayout());
         tablePanel.setBackground(Color.WHITE);
         tablePanel.setBorder(BorderFactory.createLineBorder(new Color(70, 130, 180), 2));
@@ -357,7 +356,7 @@ public class PenitipanBarangGUI extends JFrame {
         tableHistori.getTableHeader().setForeground(Color.WHITE);
         tableHistori.setSelectionBackground(new Color(184, 207, 229));
         
-        // Custom renderer untuk status di histori
+        // Custom renderer status histori
         tableHistori.getColumnModel().getColumn(8).setCellRenderer(new DefaultTableCellRenderer() {
             @Override
             public Component getTableCellRendererComponent(JTable table, Object value, 
@@ -406,7 +405,7 @@ public class PenitipanBarangGUI extends JFrame {
     }
     
     private void simpanBarang() {
-        // Validasi input yang lebih komprehensif
+        // Validasi input
         if (txtNamaPemilik.getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(this, 
                 "Nama Pemilik harus diisi!", 
@@ -435,7 +434,7 @@ public class PenitipanBarangGUI extends JFrame {
             txtNomorFaktur.getText().trim().isEmpty() ? null : txtNomorFaktur.getText().trim()
         );
         
-        // Simpan ke database
+        // Simpan ke db
         if (barangDAO.simpanBarang(barang)) {
             JOptionPane.showMessageDialog(this, 
                 "✅ Data barang berhasil disimpan!\n\nBarang milik " + barang.getNamaPemilik() + 
@@ -509,7 +508,7 @@ public class PenitipanBarangGUI extends JFrame {
         String namaPemilik = (String) tableModel.getValueAt(selectedRow, 1);
         String jenisBarang = (String) tableModel.getValueAt(selectedRow, 3);
         
-        // Dialog konfirmasi yang lebih informatif
+        // konfirmasi
         String message = String.format(
             "Apakah barang berikut sudah diambil oleh pemiliknya?\n\n" +
             "📦 Jenis Barang: %s\n" +
@@ -559,7 +558,7 @@ public class PenitipanBarangGUI extends JFrame {
         
         int id = (Integer) tableModel.getValueAt(selectedRow, 0);
         
-        // Ambil data detail dari database
+        // Ambil data detail dari db
         List<Barang> allBarang = barangDAO.getAllBarang();
         Barang selectedBarang = null;
         
