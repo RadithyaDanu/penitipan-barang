@@ -18,8 +18,11 @@ Letakkan semua `.jar` di folder `lib/`.
 
 penitipan-barang/
 ├── src/ # Kode sumber (file .java)
+
 ├── lib/ # File library eksternal (.jar)
+
 ├── build.xml # File konfigurasi Ant
+
 └── README.md # Dokumentasi proyek
 
 
