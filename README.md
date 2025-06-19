@@ -16,11 +16,17 @@ Letakkan semua `.jar` di folder `lib/`.
 
 ##  Struktur Direktori
 penitipan-barang/
+
 ├── src/
+
 │ └── *.java
+
 ├── lib/
+
 │ └── *.jar
+
 ├── build.xml
+
 └── README.md
 
 
