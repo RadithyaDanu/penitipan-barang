@@ -15,15 +15,13 @@ Aplikasi desktop berbasis Java Swing untuk mengelola data penitipan barang, meny
 Letakkan semua `.jar` di folder `lib/`.
 
 ##  Struktur Direktori
-
 penitipan-barang/
-├── src/ # Kode sumber (file .java)
-
-├── lib/ # File library eksternal (.jar)
-
-├── build.xml # File konfigurasi Ant
-
-└── README.md # Dokumentasi proyek
+├── src/
+│ └── *.java
+├── lib/
+│ └── *.jar
+├── build.xml
+└── README.md
 
 
 
